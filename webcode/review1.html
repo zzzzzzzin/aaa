@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/cal.js"></script>
+    <script>
+  
+        // view_month(6);
+        // view_monthV2(2022,06);
+    </script>
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 50px;
+        }
+        table, th, tr,td {     
+            border: 1px solid black; 
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Welcome! VS Code</h1>
+    <h2>javascript practice!</h2>
+    <form>
+        <input text="text" id="month" placeholder="원하는 월을 입력하세요">
+        <input type="button" value="달력 실행" onclick="make_calendar()">
+        <select id="combo" onclick="select_month()">
+            <option>---월 선택---</option>
+            <option value="1">1월</option>
+            <option value="2">2월</option>
+            <option value="3">3월</option>
+            <option value="4">4월</option>
+            <option value="5">5월</option>
+            <option value="6">6월</option>
+            <option value="7">7월</option>
+            <option value="8">8월</option>
+            <option value="9">9월</option>
+            <option value="10">10월</option>
+            <option value="11">11월</option>
+            <option value="12">12월</option>
+        </select>
+        
+    </form>
+    <div id="calendar">calendar place!
+
+        <!-- <table>
+            
+            <tr><th colspan="7">8월 달력</th></tr>
+            <tr><th class="red">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="blue">토</th></tr>
+            <tr><th class="red"></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="blue">6</th></tr>
+            <tr><th class="red">7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th class="blue">13</th></tr>
+            <tr><th class="red">14</th><th class="red">15</th><th>16</th><th>17</th><th>18</th><th>19</th><th class="blue">20</th></tr>
+            <tr><th class="red">21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th class="blue">27</th></tr>
+            <tr><th class="red">28</th><th>29</th><th>30</th><th>31</th><th></th><th></th><th class="blue"></th></tr>
+        </table> -->
+    </div>
+    <!-- event 생성 event source:button/event:click/event handler:view_monthV2 함수 -->
+    <!-- <button onclick="view_monthV2(2022,9)">달력 실행</button> -->
+</body>
+</html>
