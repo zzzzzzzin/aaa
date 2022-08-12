@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+
+body { /* 가운데 정렬 */
+			display:flex;
+			justify-content: center;
+		}
+		table {
+			width:80%;
+			margin-top:50px;
+			
+		}
+		th, td {
+			border-bottom : 1px solid #ddd;
+
+		}
+		tr:hover {
+			background-color: skyblue;
+		}
+		td.right {
+			text-align: right;
+		}
+		td.center {
+			text-align: center;
+		}
+		th {
+			background-color: #04AA6D;
+		}
+		tr:nth-child(even) {
+			background-color: #ddd;
+		}

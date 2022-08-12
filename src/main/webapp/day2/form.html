@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Form Test</title>
+		
+		<style>
+			table, tr, td, th {
+				border : 1px solid black;
+			}
+			
+			table {
+				margin-top:50px;
+				border-collapse: collapse;
+			}
+			
+			td.col1 {
+				/*width:100px;*/	
+				text-align: right;
+				padding:10px;
+			}
+			
+			#submit {
+				text-align: center;	
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function check_id() {
+				//id 입력 유무 확인
+				let user_id = document.getElementById("user_id").value;
+				if (user_id==="") {
+					alert("아이디 입력란이 비어있습니다.");
+				} else if (user_id.length<8) {
+					alert("아이디의 길이는 최소 8자입니다.")
+				} else {
+					//첫 글자는 숫자가 올 수 없습니다. 작성한 아이디를 전부 삭제합니다.
+					//let letter = user_id.charAt(0);
+					let letter = user_id[0];
+					const numbers = '0123456789';
+					//The indexOf() method returns -1 if the value is not found.
+					//indexOf는 내부에 없는 요소 찾으면 -1 반환함
+					//numbers 안의 요소가 첫번째 글자에 있으면 alert
+					let index = numbers.indexOf(numbers);
+					if(index!=-1) {
+						alert('첫 글자는 숫자가 올 수 없습니다.');
+						
+					}
+				}
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<form>	
+			<table>
+				<tr>
+					<th>구분</th>
+					<th>입력태그</th>
+					<th>비고</th>
+				</tr>
+				<tr>
+					<td class="col1">아이디</td>
+					<td><input id="user_id" type="text" value="" ></td>
+					<td><input type="button" value="IDcheck" onclick="check_id()"></td>
+				</tr>
+				<tr>
+					<td class="col1">언어</td>
+					<td><!-- name=" " 붙여줘야 같은 데이터로 인식해서 단일선택 먹힘(grouping) -->
+						<input type="radio" name="lang">One
+						<input type="radio" name="lang" checked="checked">Two
+						<input type="radio" name="lang">Three
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="col1">툴</td>
+					<td><!-- name=" " 붙여줌 -grouping 해줘야 같은 데이터들끼리 모임 -->
+						<input type="checkbox" name="tools">One
+						<input type="checkbox" name="tools">Two
+						<!-- checked="checked" default로 선택됨 -->
+						<input type="checkbox" name="tools" checked="checked">Three
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="col1">선택</td>
+					<td>
+						<select>
+							<option>---select---
+							<option selected="selected">One<!-- default값으로 selected -->
+							<option>Two
+						</select>
+					</td>
+					<td></td>
+				</tr>
+			<!-- 
+				<tr>
+					<td><input type="hidden" name="key" value="1234"></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="hidden" name="is_check" value="true"></td>
+					<td></td>
+					<td></td>
+				</tr>
+			 -->
+				<tr>
+					<td class="col1">버튼</td>
+					<td><button><img src="../imgs/button.png" width="15" height="15"></button></td>
+					<td><input type="button" value="check"></td>
+				</tr>
+				<tr>
+					<td class="col1">자기소개</td>
+					<td colspan="2"><textarea rows="5" cols="40">default</textarea></td>
+					
+				</tr>
+				<tr>
+					
+					<td id="submit" colspan="3"><input type="submit"></td>
+					
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
